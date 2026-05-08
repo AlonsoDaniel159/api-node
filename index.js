@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Endpoint 1: GET /
 app.get('/', (req, res) => {
@@ -12,7 +12,7 @@ app.get('/saludar', (req, res) => {
   res.json({ mensaje: '¡Hola desde la API de Node.js!' });
 });
 
-// Iniciar servidor
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
+// Iniciar servidor - escuchar en todas las interfaces
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en puerto ${PORT}`);
 });

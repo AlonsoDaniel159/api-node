@@ -12,6 +12,10 @@ app.get('/saludar', (req, res) => {
   res.json({ mensaje: '¡Hola desde la API de Node.js!' });
 });
 
+app.get('/entorno', (req, res) => {
+  res.json({ mensaje: 'Hola, saludos desde Producción' });
+});
+
 // Iniciar servidor - escuchar en todas las interfaces
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
